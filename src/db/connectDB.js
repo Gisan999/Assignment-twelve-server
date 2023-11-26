@@ -10,10 +10,10 @@ const getConnectionString = () => {
         connectionURI = connectionURI.replace('<password>', process.env.DB_PASS)
         
     }else{
-        connectionURI 
+        connectionURI = process.env.DATABASE_PROD
     }
 
-    return connectionURI
+    return connectionURI 
 }
 
 const connectDB = async () => {

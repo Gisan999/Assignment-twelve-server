@@ -4,9 +4,16 @@ const connectDB = require('./db/connectDB');
 require('dotenv').config();
 const app = express();
 const port = process.env.PORT || 5000;
-
+const userRoute = require('./routes/userRoutes')
+const paymentRoute = require('./routes/paymentRoutes');
+const jwtRoute = require('./routes/jwtRoutes')
 
 applyMiddleware(app);
+
+app.use(userRoute);
+app.use(paymentRoute);
+app.use(jwtRoute);
+
 
 
 app.get('/health', (req, res) => {
@@ -25,7 +32,6 @@ app.use((err, req, res, next) => {
     });
 })
  
-
 const main = async () => {
     await connectDB();
     app.listen(port, () => {
