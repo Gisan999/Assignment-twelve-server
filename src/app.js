@@ -16,7 +16,7 @@ app.use(jwtRoute);
 
 
 
-app.get('/health', (req, res) => {
+app.get('/', (req, res) => {
     res.send('final project is running')
 })
 
