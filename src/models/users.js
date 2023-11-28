@@ -33,6 +33,14 @@ const userSchema = new Schema({
         type:String ,
     
     },
+    "team":{
+        type:String ,
+    
+    },
+    "image":{
+        type:String ,
+    
+    },
     
   });
 

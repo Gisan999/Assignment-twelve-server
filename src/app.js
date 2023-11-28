@@ -7,12 +7,16 @@ const port = process.env.PORT || 5000;
 const userRoute = require('./routes/userRoutes')
 const paymentRoute = require('./routes/paymentRoutes');
 const jwtRoute = require('./routes/jwtRoutes')
+const adminAssetsRoute = require('./routes/adminAssetRoute')
+const employeeList = require('./routes/employeeRoutes')
 
 applyMiddleware(app);
 
 app.use(userRoute);
 app.use(paymentRoute);
 app.use(jwtRoute);
+app.use(adminAssetsRoute);
+app.use(employeeList);
 
 
 
