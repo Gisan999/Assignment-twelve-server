@@ -1,17 +1,15 @@
 const users = require("../../models/users");
 
-const adminCheck = async (req, res) => {
+const userData = async (req, res) =>{
     const email = req.params.email;
     // console.log(email);
 
     try {
         const userCheck = await users.findOne({ email: email });
 
-        const admin = userCheck.role === 'admin';
-
-        if (admin) {
-            res.send({ admin });
-        }
+      
+            res.send(userCheck);
+        
 
     } catch (error) {
         // console.error('Error in adminCheck:', error);
@@ -19,7 +17,4 @@ const adminCheck = async (req, res) => {
     }
 }
 
-module.exports = adminCheck;
-
-
-
+module.exports = userData

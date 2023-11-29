@@ -41,6 +41,10 @@ const userSchema = new Schema({
         type:String ,
     
     },
+    "adminEmail":{
+        type:String ,
+    
+    },
     
   });
 

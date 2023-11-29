@@ -2,10 +2,14 @@ const users = require("../../models/users");
 
 const updateUser = async (req, res) => {
     const userId = req.params.id;
+    const userData = req.body;
+    const query =   userData.adminEmail ;
 
-    console.log(userId);
     const updateData = {
-        $set: { team: 'yes' }
+        $set: {
+            team: 'yes',
+            adminEmail: query
+        }
     };
     const options = {
         upsert: true,

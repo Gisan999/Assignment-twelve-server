@@ -9,6 +9,7 @@ const paymentRoute = require('./routes/paymentRoutes');
 const jwtRoute = require('./routes/jwtRoutes')
 const adminAssetsRoute = require('./routes/adminAssetRoute')
 const employeeList = require('./routes/employeeRoutes')
+const customRequest = require('./routes/customRequestRoutes')
 
 applyMiddleware(app);
 
@@ -17,6 +18,7 @@ app.use(paymentRoute);
 app.use(jwtRoute);
 app.use(adminAssetsRoute);
 app.use(employeeList);
+app.use(customRequest);
 
 
 
@@ -35,7 +37,7 @@ app.use((err, req, res, next) => {
         message: err.message
     });
 })
- 
+
 const main = async () => {
     await connectDB();
     app.listen(port, () => {

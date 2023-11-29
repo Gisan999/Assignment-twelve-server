@@ -9,6 +9,9 @@ const employeeSchema = new Schema({
     },
     'role':{
         type:String
+    },
+    'adminEmail':{
+        type:String
     }
 })
 
