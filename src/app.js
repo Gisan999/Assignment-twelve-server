@@ -10,6 +10,7 @@ const jwtRoute = require('./routes/jwtRoutes')
 const adminAssetsRoute = require('./routes/adminAssetRoute')
 const employeeList = require('./routes/employeeRoutes')
 const customRequest = require('./routes/customRequestRoutes')
+const postGetRequest = require('./routes/postGetRequestRoutes')
 
 applyMiddleware(app);
 
@@ -19,6 +20,7 @@ app.use(jwtRoute);
 app.use(adminAssetsRoute);
 app.use(employeeList);
 app.use(customRequest);
+app.use(postGetRequest);
 
 
 
@@ -38,11 +40,13 @@ app.use((err, req, res, next) => {
     });
 })
 
-const main = async () => {
-    await connectDB();
-    app.listen(port, () => {
-        console.log(`final project server running on the port ${port}`);
-    })
-}
+// const main = async () => {
+//     await connectDB();
+//     app.listen(port, () => {
+//         console.log(`final project server running on the port ${port}`);
+//     })
+// }
 
-main()
+// main()
+
+module.exports = app;

@@ -6,6 +6,6 @@ const verifyToken = require('../../middleware/verifyToken')
 const router = require('express').Router()
 
 router.post('/set/asset', verifyToken, verifyAdmin, postAdminAsset )
-router.get('/get/asset', verifyToken, verifyAdmin, getAdminAsset)
+router.get('/get/asset',   getAdminAsset)
 
 module.exports = router
