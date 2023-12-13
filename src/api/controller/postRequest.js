@@ -2,7 +2,6 @@ const assetRequest = require("../../models/postGetRequest");
 
 const postRequest = async(req, res)=>{
     const requestPost = req.body;
-
     try {
         const result = await assetRequest.create(requestPost);
         res.send(result);

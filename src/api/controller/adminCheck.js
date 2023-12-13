@@ -9,6 +9,10 @@ const adminCheck = async (req, res) => {
 
         const admin = userCheck.role === 'admin';
 
+        if (!admin) {
+            return res.send({ message: 'User not a admin'});
+        }
+
         if (admin) {
             res.send({ admin });
         }

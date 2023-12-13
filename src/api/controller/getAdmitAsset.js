@@ -2,8 +2,7 @@ const assetsAdmin = require("../../models/adminAsset");
 
 
 const getAdminAsset = async (req, res) => {
-    // const email = req.query.email;
-    // const query = { email: email };
+  
     try {
         const result = await assetsAdmin.find().sort({quantity: 1});
         res.send(result);

@@ -22,8 +22,6 @@ app.use(employeeList);
 app.use(customRequest);
 app.use(postGetRequest);
 
-
-
 app.get('/', (req, res) => {
     res.send('final project is running')
 })
@@ -39,14 +37,4 @@ app.use((err, req, res, next) => {
         message: err.message
     });
 })
-
-// const main = async () => {
-//     await connectDB();
-//     app.listen(port, () => {
-//         console.log(`final project server running on the port ${port}`);
-//     })
-// }
-
-// main()
-
 module.exports = app;
